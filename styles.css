@@ -491,13 +491,8 @@ body {
     position: absolute;
     width: 2px;
     height: 25px;
-    background: linear-gradient(
-        to bottom,
-        rgba(74, 222, 128, 0.8),
-        transparent 90%
-    );
-    animation: 
-         animation: rainFall 1.5s linear 6.666;
+    background: linear-gradient(to bottom, rgba(74, 222, 128, 0.8), transparent 90%);
+    animation: rainFall 3s linear infinite;
     opacity: 0.7;
 }
 
@@ -606,17 +601,14 @@ body {
 @keyframes rainFall {
     0% {
         transform: translateY(-100vh) translateX(0);
-        opacity: 0;
+        opacity: 0.7; /* Opacidad inicial */
     }
-    20% {
-        opacity: 1;
-    }
-    80% {
-        opacity: 0.8;
+    50% {
+        opacity: 0.35; /* Opacidad intermedia */
     }
     100% {
         transform: translateY(100vh) translateX(30vw);
-        opacity: 0;
+        opacity: 0; /* Opacidad final (totalmente transparente) */
     }
 }
 
