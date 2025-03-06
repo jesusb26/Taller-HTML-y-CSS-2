@@ -496,22 +496,6 @@ body {
     opacity: 0.7;
 }
 
-/* Variaciones para efecto más natural */
-.particle:nth-child(odd) {
-    animation-delay: 0.5s;
-    animation-duration: 2s;
-}
-
-.particle:nth-child(even) {
-    animation-duration: 1.8s;
-}
-
-.particle:nth-child(3n) {
-    animation-delay: 0.2s;
-    width: 1px;
-    height: 15px;
-}
-
 /* Animaciones */
 @keyframes gradient {
     0% { background-position: 0% 50%; }
