@@ -1,4 +1,4 @@
-/* Variables y estilos generales */
+/* Variables CSS */
 :root {
     --primary-color: #e74c3c;
     --secondary-color: #2c3e50;
@@ -6,52 +6,48 @@
     --text-color: #333;
 }
 
+/* Estilos generales */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
+    text-align: center;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 /* Header con sombra */
-.header {
+header {
     background-color: var(--primary-color);
     color: white;
-    padding: 2rem;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* box-shadow */
 }
 
 /* GRID LAYOUT */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajuste dinámico */
     grid-gap: 20px;
     padding: 20px;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-/* Estilo de cada ítem en la grid */
+/* Estilos de las tarjetas */
 .grid-item {
     background-color: var(--secondary-color);
     color: white;
-    padding: 30px;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 2rem;
+    padding: 50px;
+    text-align: center;
+    border-radius: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* text-shadow */
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s; /* transition */
 }
 
-/* Efecto al pasar el mouse */
-.grid-item:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* ANIMACIÓN */
-@keyframes fadeIn {
+/* Animación al cargar */
+@keyframes aparecer {
     from {
         opacity: 0;
         transform: translateY(-20px);
@@ -62,14 +58,26 @@ body {
     }
 }
 
-/* Aplicar animación */
 .grid-item {
-    animation: fadeIn 0.8s ease-in-out;
+    animation: aparecer 0.8s ease-in-out;
 }
 
-/* RESPONSIVE */
-@media screen and (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* Efecto al pasar el mouse */
+.grid-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4); /* box-shadow */
+    filter: brightness(1.2); /* filter */
+}
+
+/* Efecto Clip-Path en tarjetas específicas */
+.item1 {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* clip-path */
+}
+
+.item2 {
+    clip-path: circle(50% at 50% 50%);
+}
+
+.item3 {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
