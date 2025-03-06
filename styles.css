@@ -497,8 +497,7 @@ body {
         transparent 90%
     );
     animation: 
-        rainFall 1.5s linear infinite, /* Animación de caída */
-        fadeOut 10s linear forwards;   /* Animación de desvanecimiento */
+         animation: rainFall 1.5s linear 6.666;
     opacity: 0.7;
 }
 
@@ -621,14 +620,6 @@ body {
     }
 }
 
-@keyframes fadeOut {
-    0% {
-        opacity: 0.7; /* Opacidad inicial */
-    }
-    100% {
-        opacity: 0;   /* Opacidad final (totalmente transparente) */
-    }
-}
 
 @keyframes borderGlow {
     0% { background-position: 0% 50%; }
