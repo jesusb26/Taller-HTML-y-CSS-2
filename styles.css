@@ -484,18 +484,19 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 2; /* Aseguramos que estén sobre otros elementos */
+    z-index: 1;
 }
 
 .particle {
     position: absolute;
     width: 2px;
-    height: 25px;
-    background: linear-gradient(to bottom, rgba(74, 222, 128, 0.8), transparent 90%);
-    animation: rainFall 3s linear infinite;
-    opacity: 0.7;
+    height: 2px;
+    background: rgba(74, 222, 128, 0.5);
+    border-radius: 50%;
+    animation: particleFloat 5s linear infinite;
+    top: -10px; /* Comienzan fuera de la pantalla (arriba) */
+    left: calc(var(--random-x) * 1%); /* Posición horizontal aleatoria */
 }
-
 /* Animaciones */
 @keyframes gradient {
     0% { background-position: 0% 50%; }
@@ -582,20 +583,22 @@ body {
     100% { transform: translateX(100%); }
 }
 
-@keyframes rainFall {
+@keyframes particleFloat {
     0% {
-        transform: translateY(-100vh) translateX(0);
-        opacity: 0.7; /* Opacidad inicial */
+        transform: translateY(0) translateX(0);
+        opacity: 0;
     }
-    50% {
-        opacity: 0.35; /* Opacidad intermedia */
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.8;
     }
     100% {
-        transform: translateY(100vh) translateX(30vw);
-        opacity: 0; /* Opacidad final (totalmente transparente) */
+        transform: translateY(100vh) translateX(calc(var(--random-x) * 1vw));
+        opacity: 0;
     }
 }
-
 
 @keyframes borderGlow {
     0% { background-position: 0% 50%; }
